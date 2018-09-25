@@ -21,10 +21,10 @@ let GenerateCards = (props) => {
         <div className='cardContainer'>
         {props.cards.map(card => {
             return (
-                <div key={card.id} className='bigCard'>
+                <div key={card.id} className='bigCard' id={card.id}>
                     <span className='name'>{card.name}</span>
                     <span className='power'>{card.power}</span>
-                    <span className='img'>{card.img}</span>
+                    {/* <span className='img'>{card.img}</span> */}
                     <span className='state'>{card.state}</span>
                 </div>
             )
