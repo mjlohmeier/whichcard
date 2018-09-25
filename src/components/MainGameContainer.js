@@ -25,7 +25,7 @@ let GenerateCards = (props) => {
                     <span className='name'>{card.name}</span>
                     <span className='power'>{card.power}</span>
                     {/* <span className='img'>{card.img}</span> */}
-                    <span className='state'>{card.state}</span>
+                    {/* <span className='state'>{card.state}</span> */}
                 </div>
             )
             }
