@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: fit-content;
+}
+
+
+.bigCard {
+  width: 125px;
+  height: 175px;
+  background-color: pink;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 5px solid brown;
+  border-radius: 5px;
+}
+
+[id='1']  {
+  background-size: cover;
+  background-position-x: -10px;
+  background-image: url('./images/jedi/luke.jpg');
+}
+
+[id='2'] {
+  background-size: cover;
+  background-position-x: -30px;
+  background-image: url('./images/jedi/ewok.jpg');
+}
+
+[id='3'] {
+  background-size: cover;
+  background-position-x: -10px;
+  background-image: url('./images/jedi/mace_windu.jpg');
+}
+
+[id='4'] {
+  background-size: cover;
+  background-image: url('./images/jedi/jarjar.jpg');
+}
+
+[id='5'] {
+  background-size: cover;
+  background-image: url('./images/jedi/aayla.jpg');
+}
+
+[id='6'] {
+  background-size: cover;
+  background-image: url('./images/jedi/chewy.jpg');
+}
+
+[id='7'] {
+  background-size: cover;
+  background-image: url('./images/jedi/finn.jpg');
+}
+
+[id='8'] {
+  background-size: cover;
+  background-position-x: -10px;
+  background-image: url('./images/jedi/rebel_soldier.jpg');
+}
+
+[id='9'] {
+  background-size: cover;
+  background-image: url('./images/jedi/yoda.jpg');
+}
+
+[id='10'] {
+  background-size: cover;
+  background-position-x: -5px;
+  background-image: url('./images/jedi/r2d2.jpg');
+}
