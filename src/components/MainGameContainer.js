@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import kylo from '../images/sith/kylo.jpg';
-import vader from '../images/sith/vader.jpeg';
+// const axios = require('axios');
 
 let mapStateToProps = (state) => {
     //returns just the list of jedi cards, state has both sets
@@ -17,10 +16,21 @@ let MainGame = (props) => {
     )
 }
 
-let AffectMove = (event, power) => {
+let AffectMove = (event, card) => {
     event.preventDefault();
     console.log(event.target);
-    console.log(power);
+    console.log(card.power);
+    let data =  JSON.stringify({attackPower: card.power});
+    
+    console.log(data);
+
+    fetch('http://localhost:3005/game/id', {
+        method: "POST",
+        body: data,
+        headers: {
+            'Content-Type': "application/json"
+        }
+    });
 }
 
 
