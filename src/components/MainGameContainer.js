@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import kylo from '../images/sith/kylo.jpg';
-import vader from '../images/sith/vader.jpeg';
+import {Howl} from 'howler';
 
 let mapStateToProps = (state) => {
     //returns just the list of jedi cards, state has both sets
@@ -17,7 +16,12 @@ let MainGame = (props) => {
     )
 }
 
+let lightsaberclash = new Howl({
+    src: ['/sounds/lightsaberclash.mp3']
+});
+
 let AffectMove = (event, power) => {
+    lightsaberclash.play();
     event.preventDefault();
     console.log(event.target);
     console.log(power);
