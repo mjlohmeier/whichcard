@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import sendAttack from './GameController'
 import {Howl} from 'howler';
+import {wolfram} from './Wolfram.js';
 
 
 let mapStateToProps = (state) => {
@@ -18,6 +19,7 @@ let mapStateToProps = (state) => {
 
 let MainGame = (props) => {
     console.log(props.cards)
+    fetch(wolfram + '/')
     return (
         <div className='cardEntireScreenFit'>
             <GenerateCards cards={props.cards} />
