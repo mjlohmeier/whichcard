@@ -31,7 +31,7 @@ let lightsaberclash = new Howl({
     src: ['/sounds/lightsaberclash.mp3']
 });
 
-let AffectMove = (event, power) => {
+let AffectMove = (event, card) => {
     lightsaberclash.play();
     event.preventDefault();
     let data =  JSON.stringify({attackPower: card.power});
