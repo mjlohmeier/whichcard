@@ -1,20 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import sendAttack from './GameController'
 import {Howl} from 'howler';
 
+
 let mapStateToProps = (state) => {
-    //returns just the list of jedi cards, state has both sets
-    return { cards: state.Sith };
+    console.log(state.createUser.isSith)
+    if (state.createUser.isSith == 'false') {
+        return { cards: state.Jedi };
+    } if (state.createUser.isSith == 'true') {
+        return { cards: state.Sith }
+    } else {
+        return { cards: state.Jedi };
+    }
 }
 
+
 let MainGame = (props) => {
-    // console.log(props.cards)
+    console.log(props.cards)
     return (
-        <div >
+        <div className='cardEntireScreenFit'>
             <GenerateCards cards={props.cards} />
         </div>
     )
 }
+
+
 
 let lightsaberclash = new Howl({
     src: ['/sounds/lightsaberclash.mp3']
@@ -23,10 +34,9 @@ let lightsaberclash = new Howl({
 let AffectMove = (event, power) => {
     lightsaberclash.play();
     event.preventDefault();
-    console.log(event.target);
-    console.log(power);
-}
-
+    let data =  JSON.stringify({attackPower: card.power});
+    sendAttack(data);
+};
 
 let GenerateCards = (props) => {
     console.log(props);
@@ -55,6 +65,7 @@ let GenerateCards = (props) => {
             )
             }
         </div>)
+        
 }
 
 let MainGameContainer = connect(mapStateToProps)(MainGame)

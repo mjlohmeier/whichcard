@@ -6,10 +6,32 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 let reducer = (oldState, action) => {
+    if (action.type === 'NEW_GAME') {
+        // let obj = action.id;
+        // obj["cartId"] = action.cartId;
+        console.log(action.newGame.isSith);
+        let obj = {}
+        obj['isSith'] = action.newGame.isSith
+        
+        return (
+        {... oldState, 
+            createUser : [
+                ...oldState.createUser, obj
+            ]}
+        // oldState
+        )
+    } else {
     return oldState
+    }
 }
 
 let initialState = {
+    "createUser" : {
+        "username": "",
+        "password": "",
+        "gameID": "",
+        "isSith": false
+    },
     "Jedi" : [
         {"id": 1, "name": 'Luke Skywalker', "power": '10', "img": './images/jedi/luke.jpg', "state": 'active'},
         {"id": 2, "name": 'Ewok', "power": '2', "img": './images/jedi/ewok.jpg', "state": 'active'},

@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter, Route, Switch} from 'react-router-dom';
-import HomePageContainer from './components/HomePageContainer';
+import UserCreationWrapper from './components/UserCreationHome';
 import MainGameContainer from './components/MainGameContainer';
 
 const Router = () => (
@@ -9,7 +9,7 @@ const Router = () => (
             {/* <Navbar />
             <SideBar /> */}
             <Switch>
-                <Route exact path='/' component={HomePageContainer}/>
+                <Route exact path='/' component={UserCreationWrapper}/>
                 <Route path='/game/:id' component={MainGameContainer}/>
             </Switch>
         </div>
