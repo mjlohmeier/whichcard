@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import sendAttack from './GameController'
-// const axios = require('axios');
+import {Howl} from 'howler';
+
 
 let mapStateToProps = (state) => {
     console.log(state.createUser.isSith)
@@ -24,7 +25,14 @@ let MainGame = (props) => {
     )
 }
 
-let AffectMove = (event, card) => {
+
+
+let lightsaberclash = new Howl({
+    src: ['/sounds/lightsaberclash.mp3']
+});
+
+let AffectMove = (event, power) => {
+    lightsaberclash.play();
     event.preventDefault();
     let data =  JSON.stringify({attackPower: card.power});
     sendAttack(data);
