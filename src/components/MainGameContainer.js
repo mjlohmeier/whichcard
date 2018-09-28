@@ -7,16 +7,13 @@ import {wolfram} from './Wolfram.js';
 
 let mapStateToProps = (state) => {
     console.log(state.createUser.isSith)
-    if (state.createUser.isSith == 'false') {
-        return { cards: state.Jedi };
-    } if (state.createUser.isSith == 'true') {
-        return { cards: state.Sith }
-    } else {
-        return { cards: state.Jedi };
-    }
-}
+    return (state.createUser.isSith) ?
+        { cards: state.Sith } 
+    :
+        { cards: state.Jedi }
+    };
 
-
+ 
 let MainGame = (props) => {
     console.log(props.cards)
     fetch(wolfram + '/')

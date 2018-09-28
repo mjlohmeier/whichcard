@@ -33,15 +33,8 @@ class UserCreationWrapper extends React.Component {
             this.props.dispatch({type:'NEW_GAME', newGame: this.state})
         };
 
-
-        // let gameTicker = (event) => {
-        //     let game = 0;
-
-        // };
-
         let chooseSith = (e) => {
-            let newTeam = {};
-            newTeam['isSith'] = e.target.value;
+            let newTeam = {isSith: e.target.value};
             console.log(newTeam)
             //include a game ticker here
             this.setState(newTeam);
