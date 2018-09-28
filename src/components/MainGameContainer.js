@@ -2,63 +2,73 @@ import React from 'react';
 import { connect } from 'react-redux';
 import sendAttack from './GameController'
 import {Howl} from 'howler';
-import {wolfram} from './Wolfram.js';
+import changeCardStatus from './ChangeCardStatus';
 
 
 let mapStateToProps = (state) => {
     console.log(state.createUser.isSith)
     return (state.createUser.isSith) ?
-        { cards: state.Sith } 
+        { cards: state.Sith} 
     :
         { cards: state.Jedi }
     };
 
- 
+
 let MainGame = (props) => {
     console.log(props.cards)
-    fetch(wolfram + '/')
+    let dispatcher = props.dispatch;
+    console.log(dispatcher);
+    console.log(dispatcher);
     return (
         <div className='cardEntireScreenFit'>
-            <GenerateCards cards={props.cards} />
+            <GenerateCards cards={props.cards} dispatcher={dispatcher} />
         </div>
     )
 }
-
-
 
 let lightsaberclash = new Howl({
     src: ['/sounds/lightsaberclash.mp3']
 });
 
-let AffectMove = (event, card) => {
+let AffectMove = (event, card, dispatcher) => {
+    console.log(card.id);
     lightsaberclash.play();
     event.preventDefault();
     let data =  JSON.stringify({attackPower: card.power});
+    let newCardStatus = (card.switch) ? 
+            card.switch = false 
+        : 
+            card.switch = true;
     sendAttack(data);
+    changeCardStatus(card, card.id, card.team, newCardStatus, dispatcher);
+    
 };
 
-let GenerateCards = (props) => {
-    console.log(props);
+let Card = ({dispatcher, card}) => {
+    console.log(card.team);
+    return (<div 
+            className={`bigCard ${card.switch ? 'active' : 'inactive'}`}
+            id={card.id}
+            onClick={(event) => { AffectMove(event, card, dispatcher) }}
+            style={{backgroundImage: `url(${card.img})`}}
+            >
 
+            <span className='name'>{card.name}</span>
+            <span className='power'>{card.power}</span>
+
+            {/* <span className='img'>{card.img}</span> */}
+            {/* <span className='state'>{card.state}</span> */}
+        </div>)
+}
+
+let GenerateCards = ({dispatcher, cards}) => {
+    console.log(dispatcher);
+    console.log(cards);
     return (
         <div className='cardContainer'>
-            {props.cards.map(card => {
+            {cards.map(card => {
                 return (
-                    // style={GenerateCardStyle(this.card.img)}
-                    <div key={card.id}
-                        className='bigCard'
-                        name={card.name}
-                        id={card.id}
-                        power={card.power}
-                        state={card.state}
-                        onClick={(event) => { AffectMove(event, card) }}>
-
-                        <span className='name'>{card.name}</span>
-                        <span className='power'>{card.power}</span>
-
-                        {/* <span className='img'>{card.img}</span> */}
-                        {/* <span className='state'>{card.state}</span> */}
-                    </div>
+                    <Card key={card.id} card={card} dispatcher={dispatcher}/>
                 )
             }
             )

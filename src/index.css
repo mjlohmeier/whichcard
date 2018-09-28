@@ -17,7 +17,7 @@ body {
   bottom: 0;
   right: 0;
   overflow: auto;
-  background-image: url('./images/bg2.jpg');
+  background-image: url('./bg2.jpg');
 }
 
 .link {
@@ -73,9 +73,9 @@ body {
   bottom: 0;
   right: 0;
   overflow: auto;
-  background-image: url('./images/bg2.jpg');
-
+  background-image: url('./bg2.jpg');
 }
+
 
 .cardContainer {
   display: flex;
@@ -85,11 +85,12 @@ body {
   width: fit-content;
 }
 
+
+
 .bigCard {
   display: grid;
   width: 125px;
   height: 175px;
-  /* background-color: pink; */
   margin-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
@@ -100,6 +101,15 @@ body {
   border-radius: 5px;
   transition: 0.7s;
   -webkit-transition:  0.4s;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-size: cover;
+}
+
+.bigCard.inactive {
+  opacity: .3;
 }
 
 .bigCard:hover {
@@ -135,203 +145,3 @@ body {
   color: whitesmoke;
   pointer-events: none;
 }
-
-[id='1']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -10px;
-  background-image: url('./images/jedi/luke.jpg');
-}
-
-
-[id='2'] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -30px;
-  background-image: url('./images/jedi/ewok.jpg');
-}
-
-
-[id='3'] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -10px;
-  background-image: url('./images/jedi/mace_windu.jpg');
-}
-
-[id='4'] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-image: url('./images/jedi/jarjar.jpg');
-}
-
-[id='5'] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-image: url('./images/jedi/aayla.jpg');
-}
-
-[id='6'] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-image: url('./images/jedi/chewy.jpg');
-}
-
-[id='7'] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-image: url('./images/jedi/finn.jpg');
-}
-
-[id='8'] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -10px;
-  background-image: url('./images/jedi/rebel_soldier.jpg');
-}
-
-[id='9'] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-image: url('./images/jedi/yoda.jpg');
-}
-
-
-[id='10'] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -5px;
-  background-image: url('./images/jedi/r2d2.jpg');
-}
-
-[id='11']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -100px;
-  background-repeat: no-repeat;
-  background-image: url('./images/sith/vader.jpeg');
-}
-
-[id='12']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: 1020px;
-  background-image: url('./images/sith/fett.jpeg');
-}
-
-[id='13']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: 0px;
-  background-image: url('./images/sith/pp.jpg');
-}
-
-[id='14']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -10px;
-  background-image: url('./images/sith/scout.jpg');
-}
-
-[id='15']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -10px;
-  background-image: url('./images/sith/maul.jpg');
-}
-
-[id='16']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -40px;
-  background-image: url('./images/sith/droideka.jpg');
-}
-
-[id='17']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -10px;
-  background-image: url('./images/sith/gg.jpg');
-}
-
-[id='18']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -10px;
-  background-image: url('./images/sith/kylo.jpg');
-}
-
-[id='19']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: -30px;
-  background-image: url('./images/sith/ig.jpg');
-}
-
-[id='20']  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-size: cover;
-  background-position-x: 0px;
-  background-image: url('./images/sith/droid.png');
-}
-
