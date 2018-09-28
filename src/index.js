@@ -7,18 +7,12 @@ import { Provider } from 'react-redux';
 
 let reducer = (oldState, action) => {
     if (action.type === 'NEW_GAME') {
-        // let obj = action.id;
-        // obj["cartId"] = action.cartId;
         console.log(action.newGame.isSith);
-        let obj = {}
-        obj['isSith'] = action.newGame.isSith
-        
         return (
         {... oldState, 
-            createUser : [
-                ...oldState.createUser, obj
-            ]}
-        // oldState
+            createUser:  
+               { ...oldState.createUser, isSith: action.newGame.isSith }
+            }
         )
     } else {
     return oldState
